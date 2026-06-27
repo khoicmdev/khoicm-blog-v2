@@ -2,18 +2,18 @@
 
 const projects = [
   {
-    title: "AnyManager BI Engine",
-    desc: "High-performance analytics dashboard processing massive enterprise datasets in sub-seconds.",
+    title: "AnyManager",
+    desc: "Global B2B Growth & Monetization Platform(1,800+ B2B clients)",
     badge: "Data Viz",
     badgeColor: "#c2a4ff",
     badgeText: "#1b003a",
     hoverColor: "#c2a4ff",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD2FUVU6oGJIYkz2xuzXyvMcicIw0VDvN3hOJD0bNkB2Isun8d360RqSlexaqU7IdvLCfS3rpYeDNpyu2tHBwDbwHoEtfaZeQrAHWmWQ5lhmxXNPd5otB2xqsZ8j0W967XByWDbJytOyhy5d35MKPqDRSx-2ySYPBt3IUxd440RGpiHFQKqFdhIp0tpZiQmdsPHX9zJTXpnXTmX4aJzFKQn5VenBDfrtsmqIBpe5bkjgam20983EKJpPA",
+    image: "/anymanager.webp",
   },
   {
-    title: "Multi-Modal AI Interface",
-    desc: "Real-time data streaming UI for LLM-powered insights and autonomous data exploration.",
-    badge: "AI Assistant",
+    title: "CERTivation",
+    desc: "Blockchain-based product certification solution to enhancing trust, increasing efficiency and improving your image.",
+    badge: "Blockchain",
     badgeColor: "#4edea3",
     badgeText: "#003824",
     hoverColor: "#4edea3",
@@ -23,9 +23,9 @@ const projects = [
     title: "Votereum System",
     desc: "An Ethereum-based e-voting system architecture focusing on security and transparency.",
     badge: "Blockchain",
-    badgeColor: "#c0c1ff",
+    badgeColor: "#4edea3",
     badgeText: "#1000a9",
-    hoverColor: "#c0c1ff",
+    hoverColor: "#4edea3",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBznVyOfoDG9r50yIJiRYc7J1rCO3OV2pi21xuPvpTibMkSNj9eO3RD9TzfToH7GJHHxy_uUbKcRUajoVDFv6yknxFuAo3kO-dNj2yzPUPwhn6kn0Og5Pro33vBgnXcwhEMrD4T-HCayogvJ3V6Ykw_sEmMXg1uIHFTLnKuvusWQaGblzrdCXcXgesY_AFR5-Pt2oCgDJ8bCmKoXRxN9J53q-rvnBQpnzVPDrAnvijGQdyJEEsqq3RyiA",
   },
 ];
@@ -158,7 +158,7 @@ export default function ProjectsSection() {
             A glimpse into high-performance architectures and AI integrations.
           </p>
         </div>
-        <a
+        {projects.length > 3 ? <a
           href="#"
           style={{
             display: "inline-flex",
@@ -177,9 +177,9 @@ export default function ProjectsSection() {
         >
           Explore all projects
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
           </svg>
-        </a>
+        </a> : <></>}
       </div>
 
       {/* Grid */}
