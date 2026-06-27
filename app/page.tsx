@@ -5,6 +5,7 @@ import ContactSection from "./components/ContactSection";
 import EducationSection from "./components/EducationSection";
 import ExperienceSection from "./components/ExperienceSection";
 import Footer from "./components/Footer";
+import GridBackgroundWrapper from "./components/GridBackgroundWrapper";
 import HeroSection from "./components/HeroSection";
 import NavBar from "./components/NavBar";
 import ProjectsSection from "./components/ProjectsSection";
@@ -16,13 +17,17 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <NavBar />
       <main>
-        <HeroSection />
-        <AboutSection />
+        <GridBackgroundWrapper>
+          <HeroSection />
+          <AboutSection />
+        </GridBackgroundWrapper>
         <TechStackSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <EducationSection />
-        <ContactSection />
+        <GridBackgroundWrapper>
+          <ExperienceSection />
+          <ProjectsSection />
+          <EducationSection />
+          <ContactSection />
+        </GridBackgroundWrapper>
       </main>
       <Footer />
     </div>

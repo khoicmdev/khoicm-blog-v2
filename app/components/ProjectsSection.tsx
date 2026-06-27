@@ -9,6 +9,7 @@ const projects = [
     badgeText: "#1b003a",
     hoverColor: "#c2a4ff",
     image: "/anymanager.webp",
+    url: "https://anymanager.io",
   },
   {
     title: "CERTivation",
@@ -17,22 +18,25 @@ const projects = [
     badgeColor: "#4edea3",
     badgeText: "#003824",
     hoverColor: "#4edea3",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA29VxMHMLemWXxmoeoX_jpnnTDtDw-peVQXB86qXKOeg000Xq1GEiKJxZai8oLvl31iQ0zOi1eo5JQaOdYjPGO3eVEjlbarf_conDELndlU-GpP7zrcBPnfBtSm64t5_BpHGMsiBOEpVnGkOra86JVbZukCEcLGA6Ui5_M1h3HsNnSTQCYn_4NHCiqdO-8bIziuY-IdgQx6snzJC7USAZNt-DEhExV2J7NG-jik1GoMOUrmIr95h8ElA",
-  },
-  {
-    title: "Votereum System",
-    desc: "An Ethereum-based e-voting system architecture focusing on security and transparency.",
-    badge: "Blockchain",
-    badgeColor: "#4edea3",
-    badgeText: "#1000a9",
-    hoverColor: "#4edea3",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBznVyOfoDG9r50yIJiRYc7J1rCO3OV2pi21xuPvpTibMkSNj9eO3RD9TzfToH7GJHHxy_uUbKcRUajoVDFv6yknxFuAo3kO-dNj2yzPUPwhn6kn0Og5Pro33vBgnXcwhEMrD4T-HCayogvJ3V6Ykw_sEmMXg1uIHFTLnKuvusWQaGblzrdCXcXgesY_AFR5-Pt2oCgDJ8bCmKoXRxN9J53q-rvnBQpnzVPDrAnvijGQdyJEEsqq3RyiA",
-  },
+    image: "/certivation.png",
+    url: "https://www.certivation.com/",
+  }
 ];
 
-function ProjectCard({ title, desc, badge, badgeColor, badgeText, hoverColor, image }: (typeof projects)[0]) {
+function ProjectCard({ title, desc, badge, badgeColor, badgeText, hoverColor, image, url }: (typeof projects)[0]) {
   return (
-    <div className="project-card" style={{ cursor: "default" }}>
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="project-card"
+      style={{
+        cursor: "pointer",
+        textDecoration: "none",
+        display: "block",
+        "--hover-col": hoverColor,
+      } as React.CSSProperties}
+    >
       {/* Image */}
       <div
         style={{
@@ -93,7 +97,6 @@ function ProjectCard({ title, desc, badge, badgeColor, badgeText, hoverColor, im
           marginBottom: "0.5rem",
           transition: "color 0.2s ease",
         }}
-        data-hover-color={hoverColor}
       >
         {title}
       </h3>
@@ -116,7 +119,7 @@ function ProjectCard({ title, desc, badge, badgeColor, badgeText, hoverColor, im
         .project-card:hover .project-img { transform: scale(1.05); }
         .project-card:hover .project-title { color: var(--hover-col); }
       `}</style>
-    </div>
+    </a>
   );
 }
 

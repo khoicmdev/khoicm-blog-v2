@@ -29,50 +29,47 @@ export default function NavBar() {
         backgroundColor: scrolled
           ? "rgba(10, 10, 10, 0.95)"
           : "rgba(10, 10, 10, 0.75)",
-        borderBottom: "1px solid rgba(62, 72, 80, 0.6)",
         transition: "background-color 0.3s ease",
       }}
     >
+      {/* Top Left Ambient Light Glow (Overlaying the background, fading smoothly beyond header bounds) */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "180px",
+          height: "97px",
+          background: "radial-gradient(circle at 0% 0%, rgba(194, 164, 255, 0.28) 0%, rgba(194, 164, 255, 0.08) 35%, transparent 100%)",
+          pointerEvents: "none",
+          zIndex: 1,
+        }}
+      />
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          height: "4rem",
-          padding: "0 1.5rem",
-          maxWidth: "1200px",
+          height: "97px",
+          padding: "0 3.5rem",
           margin: "0 auto",
+          marginLeft: "70px",
+          position: "relative",
+          zIndex: 2,
         }}
       >
         {/* Logo */}
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <div
-            style={{
-              width: "2rem",
-              height: "2rem",
-              borderRadius: "0.375rem",
-              background: "linear-gradient(135deg, #c2a4ff, #4edea3)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "'Geist', sans-serif",
-              fontWeight: 700,
-              fontSize: "1rem",
-              color: "#1b003a",
-            }}
-          >
-            K
-          </div>
           <span
             style={{
               fontFamily: "'Geist', sans-serif",
               fontWeight: 700,
               fontSize: "1.1rem",
-              color: "#dae2fd",
+              color: "#c2a4ff",
               letterSpacing: "-0.01em",
             }}
           >
-            khoicmdev
+            KC
           </span>
         </div>
 
@@ -92,7 +89,7 @@ export default function NavBar() {
               style={{
                 fontFamily: "'Geist', sans-serif",
                 fontSize: "0.875rem",
-                fontWeight: 500,
+                fontWeight: 700,
                 letterSpacing: "0.05em",
                 textTransform: "uppercase",
                 color: "#bec8d2",
@@ -158,7 +155,7 @@ export default function NavBar() {
                 padding: "0.75rem 0",
                 fontFamily: "'Geist', sans-serif",
                 fontSize: "0.875rem",
-                fontWeight: 500,
+                fontWeight: 700,
                 letterSpacing: "0.05em",
                 textTransform: "uppercase",
                 color: "#bec8d2",

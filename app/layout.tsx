@@ -37,6 +37,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@dev.icons/core@latest/dist/font/devicons.css"
+        />
+        <link
           href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />

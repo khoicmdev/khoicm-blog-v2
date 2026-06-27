@@ -1,168 +1,119 @@
 "use client";
 
-const frameworks = [
-  "Angular (Expert)", "React", "TypeScript", "NgRx", "Redux", "RxJS", "Signals",
-];
+import "./styles/TechStackNew.css";
 
-const aiTools = [
-  "Claude Code", "OpenAI API", "GitHub Copilot", "Agentic Workflows", "Prompt Engineering",
-];
-
-const archItems = [
-  "Micro-frontends", "NX Monorepos", "Module Federation", "CI/CD Workflows",
-];
-
-function TechChip({ label, color }: { label: string; color: "primary" | "secondary" }) {
-  const c = color === "primary" ? "#c2a4ff" : "#4edea3";
-  return (
-    <span
-      style={{
-        padding: "0.25rem 0.75rem",
-        borderRadius: "9999px",
-        background: `${c}1a`,
-        border: `1px solid ${c}26`,
-        color: c,
-        fontFamily: "'JetBrains Mono', monospace",
-        fontSize: "0.75rem",
-        fontWeight: 400,
-      }}
-    >
-      {label}
-    </span>
-  );
+interface TechItem {
+  name: string;
+  icon: string;
+  url: string | null;
 }
+
+const DEFAULT_ICON = "devicon-devicon-plain colored";
+
+// Custom organized pyramid representing our tech stack (9 -> 8 -> 7 -> 4 -> 3)
+const techStack: TechItem[][] = [
+  // Row 1 - 9 items (Core languages & web frameworks)
+  [
+    { name: "Angular", icon: "devicon-angular-plain colored", url: "https://angular.dev" },
+    { name: "React", icon: "devicon-react-original colored", url: "https://react.dev" },
+    { name: "TypeScript", icon: "devicon-typescript-plain colored", url: "https://typescriptlang.org" },
+    { name: "JavaScript", icon: "devicon-javascript-plain colored", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { name: "HTML", icon: "devicon-html5-plain colored", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    { name: "CSS", icon: "devicon-css3-plain colored", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    { name: "Bash", icon: "devicon-bash-plain colored", url: "https://www.gnu.org/software/bash/" },
+    { name: "Next.js", icon: "devicons devicons-nextjs-icon colored", url: "https://nextjs.org" },
+    { name: "Bootstrap", icon: "devicon-bootstrap-plain colored", url: "https://getbootstrap.com" },
+  ],
+  // Row 2 - 8 items (Libraries, reactive primitives & APIs)
+  [
+    { name: "Node.js", icon: "devicon-nodejs-plain colored", url: "https://nodejs.org" },
+    { name: "Tailwind", icon: "devicon-tailwindcss-plain colored", url: "https://tailwindcss.com" },
+    { name: "RxJS", icon: "devicon-rxjs-plain colored", url: "https://rxjs.dev" },
+    { name: "Signals", icon: "devicons devicons-signal", url: "https://angular.dev/guide/signals" },
+    { name: "NgRx", icon: "devicon-ngrx-plain colored", url: "https://ngrx.io" },
+    { name: "Redux", icon: "devicon-redux-original colored", url: "https://redux.js.org" },
+
+    { name: "GraphQL", icon: "devicons devicons-graphql", url: "https://graphql.org" },
+  ],
+  // Row 3 - 5 items (AI models, prompt engineering, agentic workflows, architecture)
+  [
+    { name: "Claude", icon: "devicons devicons-claude-code colored", url: "https://anthropic.com" },
+    { name: "Codex", icon: "devicons devicons-openai-icon", url: "https://openai.com/blog/openai-codex" },
+    { name: "Copilot", icon: "devicons devicons-github-copilot", url: "https://github.com/features/copilot" },
+    { name: "Agentic", icon: DEFAULT_ICON, url: null },
+    { name: "Micro-frontends", icon: "devicons devicons-webpack", url: "https://micro-frontends.org" },
+    { name: "Material", icon: "devicons devicons-material-ui", url: "https://material.angular.io" },
+  ],
+  // Row 4 - 4 items (Version control, IDE & monorepos)
+  [
+    { name: "Git", icon: "devicon-git-plain colored", url: "https://git-scm.com" },
+    { name: "GitHub", icon: "devicon-github-original colored", url: "https://github.com" },
+    { name: "VS Code", icon: "devicon-vscode-plain colored", url: "https://code.visualstudio.com" },
+    { name: "NX Monorepos", icon: "devicons devicons-nx", url: "https://nx.dev" },
+  ],
+  // Row 5 - 3 items (Design, API testing & pipelines)
+  [
+    { name: "Figma", icon: "devicons devicons-figma", url: "https://figma.com" },
+    { name: "Postman", icon: "devicons devicons-postman", url: "https://postman.com" },
+    { name: "CI/CD", icon: "devicons devicons-github-actions", url: "https://github.com/features/actions" },
+  ],
+];
 
 export default function TechStackSection() {
   return (
-    <section
-      id="skills"
-      className="scroll-margin"
-      style={{
-        padding: "8rem 1.5rem",
-        maxWidth: "1200px",
-        margin: "0 auto",
-      }}
-    >
-      {/* Header */}
-      <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-        <h2
-          style={{
-            fontFamily: "'Geist', sans-serif",
-            fontSize: "2rem",
-            fontWeight: 600,
-            letterSpacing: "-0.01em",
-            color: "#f5f5f5",
-            marginBottom: "1rem",
-          }}
+    <section id="skills" className="scroll-margin techstack-new">
+      {/* Video Background playing the black hole animation */}
+      <div className="techstack-video-container">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="techstack-video"
         >
-          Technical Stack
-        </h2>
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "1rem", color: "#a3a3a3", maxWidth: "36rem", margin: "0 auto" }}>
-          Modern technologies and methodologies used to deliver high-impact engineering results.
-        </p>
+          <source src="/video/video.webm" type="video/webm" />
+        </video>
+        <div className="techstack-overlay"></div>
       </div>
 
-      {/* Grid */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }} className="tech-grid">
-        {/* Frameworks */}
-        <div
-          className="glass-card"
-          style={{
-            padding: "2rem",
-            borderRadius: "0.75rem",
-            borderTop: "2px solid #c2a4ff",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c2a4ff" strokeWidth="2">
-              <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
-              <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
-            </svg>
-            <h3 style={{ fontFamily: "'Geist', sans-serif", fontSize: "1.5rem", fontWeight: 600, color: "#f5f5f5" }}>
-              Frameworks
-            </h3>
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-            {frameworks.map((f) => <TechChip key={f} label={f} color="primary" />)}
-          </div>
-        </div>
+      {/* Content */}
+      <div className="techstack-content">
+        <h2>Tech Stack</h2>
 
-        {/* AI & Automation */}
-        <div
-          className="glass-card"
-          style={{
-            padding: "2rem",
-            borderRadius: "0.75rem",
-            borderTop: "2px solid #4edea3",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4edea3" strokeWidth="2">
-              <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/>
-            </svg>
-            <h3 style={{ fontFamily: "'Geist', sans-serif", fontSize: "1.5rem", fontWeight: 600, color: "#f5f5f5" }}>
-              AI & Automation
-            </h3>
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-            {aiTools.map((t) => <TechChip key={t} label={t} color="secondary" />)}
-          </div>
-        </div>
-
-        {/* Architecture — full width */}
-        <div
-          className="glass-card tech-full"
-          style={{
-            padding: "2rem",
-            borderRadius: "0.75rem",
-            borderTop: "2px solid #c0c1ff",
-            gridColumn: "span 2",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c0c1ff" strokeWidth="2">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-            </svg>
-            <h3 style={{ fontFamily: "'Geist', sans-serif", fontSize: "1.5rem", fontWeight: 600, color: "#f5f5f5" }}>
-              Architecture & Tooling
-            </h3>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1rem" }} className="arch-grid">
-            {archItems.map((item) => (
-              <div
-                key={item}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: "0.875rem",
-                  color: "#a3a3a3",
-                }}
-              >
-                <span
-                  style={{
-                    width: "6px",
-                    height: "6px",
-                    borderRadius: "9999px",
-                    backgroundColor: "#c0c1ff",
-                    flexShrink: 0,
-                  }}
-                />
-                {item}
-              </div>
-            ))}
-          </div>
+        <div className="techstack-pyramid">
+          {techStack.map((row, rowIndex) => (
+            <div key={rowIndex} className="techstack-row">
+              {row.map((tech, techIndex) =>
+                tech.url ? (
+                  <a
+                    key={techIndex}
+                    href={tech.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="techstack-item"
+                    title={tech.name}
+                    data-cursor="disable"
+                  >
+                    <i className={tech.icon}></i>
+                    <span>{tech.name}</span>
+                  </a>
+                ) : (
+                  <div
+                    key={techIndex}
+                    className="techstack-item"
+                    title={tech.name}
+                    data-cursor="disable"
+                    style={{ cursor: "default" }}
+                  >
+                    <i className={tech.icon}></i>
+                    <span>{tech.name}</span>
+                  </div>
+                )
+              )}
+            </div>
+          ))}
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .tech-grid { grid-template-columns: 1fr !important; }
-          .tech-full { grid-column: span 1 !important; }
-          .arch-grid { grid-template-columns: 1fr 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

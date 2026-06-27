@@ -104,6 +104,8 @@ export default function ContactSection() {
                 fontWeight: 600,
                 textDecoration: "none",
                 borderRadius: "0.5rem",
+                position: "relative",
+                zIndex: 10,
                 transition: "transform 0.2s ease, box-shadow 0.2s ease",
               }}
               onMouseEnter={(e) => {
@@ -140,6 +142,8 @@ export default function ContactSection() {
                 textDecoration: "none",
                 borderRadius: "0.5rem",
                 border: "1px solid rgba(62, 72, 80, 0.8)",
+                position: "relative",
+                zIndex: 10,
                 transition: "background 0.2s ease, border-color 0.2s ease",
               }}
               onMouseEnter={(e) => {

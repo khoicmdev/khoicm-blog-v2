@@ -60,7 +60,7 @@ const experiences = [
     dimmed: true,
     projects: [
       {
-        name: "Certivation Phase 2",
+        name: "Certivation",
         items: [
           "Translate UI/UX design into web components using HTML/SCSS/Typescript and Angular Material.",
           "Writing documents on front-end architecture.",
@@ -166,7 +166,10 @@ export default function ExperienceSection() {
                     <span className="career-period-sub">{exp.period}</span>
 
                     {exp.award && (
-                      <div
+                      <a
+                        href="https://advertisingvietnam.com/article/anymind-group-s-anymanager-is-awarded-the-innovation-award-by-the-google-certified-publishing-partner-program-p18369"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         style={{
                           display: "inline-flex",
                           alignItems: "center",
@@ -175,7 +178,18 @@ export default function ExperienceSection() {
                           borderRadius: "0.5rem",
                           background: "rgba(194, 164, 255, 0.08)",
                           border: "1px solid rgba(194, 164, 255, 0.2)",
-                          marginTop: "0.75rem"
+                          marginTop: "0.75rem",
+                          textDecoration: "none",
+                          cursor: "pointer",
+                          transition: "background 0.2s ease, border-color 0.2s ease",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = "rgba(194, 164, 255, 0.16)";
+                          e.currentTarget.style.borderColor = "rgba(194, 164, 255, 0.4)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = "rgba(194, 164, 255, 0.08)";
+                          e.currentTarget.style.borderColor = "rgba(194, 164, 255, 0.2)";
                         }}
                       >
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="#c2a4ff">
@@ -193,7 +207,7 @@ export default function ExperienceSection() {
                         >
                           {exp.award}
                         </span>
-                      </div>
+                      </a>
                     )}
                   </div>
                   <h3>{getDisplayYear(exp.period, index)}</h3>

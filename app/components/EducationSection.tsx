@@ -87,7 +87,7 @@ export default function EducationSection() {
                         margin: 0,
                       }}
                     >
-                      University of Information Technology
+                      University of Information Technology - VNU
                     </h3>
                     <p
                       style={{

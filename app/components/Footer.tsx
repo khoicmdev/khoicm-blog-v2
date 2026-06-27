@@ -1,9 +1,23 @@
 "use client";
 
+import React from "react";
+
 const socials = [
-  { href: "https://github.com/khoicmdev", label: "GitHub" },
-  { href: "https://linkedin.com/in/khoicmdev", label: "LinkedIn" },
-  { href: "tel:+84368774688", label: "Phone" },
+  {
+    href: "https://github.com/khoicmdev",
+    label: "GitHub",
+    iconClass: "devicon-github-original",
+  },
+  {
+    href: "https://linkedin.com/in/khoicmdev",
+    label: "LinkedIn",
+    iconClass: "devicon-linkedin-plain",
+  },
+  {
+    href: "tel:+84368774688",
+    label: "Phone",
+    iconClass: null, // falls back to custom SVG since devicons doesn't have a phone icon
+  },
 ];
 
 export default function Footer() {
@@ -12,7 +26,6 @@ export default function Footer() {
       style={{
         backgroundColor: "#0A0A0A",
         padding: "3rem 0",
-        borderTop: "1px solid rgba(62, 72, 80, 0.5)",
       }}
     >
       <div
@@ -29,23 +42,6 @@ export default function Footer() {
       >
         {/* Brand */}
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <div
-            style={{
-              width: "1.75rem",
-              height: "1.75rem",
-              borderRadius: "0.25rem",
-              background: "linear-gradient(135deg, #c2a4ff, #4edea3)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "'Geist', sans-serif",
-              fontWeight: 700,
-              fontSize: "0.875rem",
-              color: "#1b003a",
-            }}
-          >
-            K
-          </div>
           <div>
             <span
               style={{
@@ -74,22 +70,21 @@ export default function Footer() {
         </div>
 
         {/* Social Links */}
-        <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
           {socials.map((s) => (
             <a
               key={s.href}
               href={s.href}
+              aria-label={s.label}
               target={s.href.startsWith("tel:") ? undefined : "_blank"}
               rel={s.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
               style={{
-                fontFamily: "'Geist', sans-serif",
-                fontSize: "0.875rem",
-                fontWeight: 500,
-                letterSpacing: "0.05em",
                 color: "#bec8d2",
                 textDecoration: "none",
                 transition: "color 0.2s ease, transform 0.2s ease",
-                display: "inline-block",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.color = "#4edea3";
@@ -100,7 +95,13 @@ export default function Footer() {
                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
               }}
             >
-              {s.label}
+              {s.iconClass ? (
+                <i className={s.iconClass} style={{ fontSize: "1.25rem" }}></i>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              )}
             </a>
           ))}
         </div>
