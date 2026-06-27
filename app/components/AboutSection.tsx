@@ -1,186 +1,209 @@
 "use client";
 
-const s = {
-  section: {
-    padding: "8rem 0",
-    maxWidth: "1200px",
-    margin: "0 auto",
-  } as React.CSSProperties,
-  sectionInner: {
-    padding: "0 1.5rem",
-  } as React.CSSProperties,
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-    gap: "4rem",
-    alignItems: "center",
-  } as React.CSSProperties,
-};
-
 export default function AboutSection() {
+  const expertise = [
+    "Frontend Architecture & System Design",
+    "Analytics & Data Visualization",
+    "AI-Powered Product Development",
+  ];
+  const leadership = [
+    "Technical Leadership & Mentoring",
+    "Performance Optimization",
+    "AI-Assisted Development Workflows",
+  ];
+
   return (
-    <section id="about" style={s.section} className="scroll-margin">
-      <div style={s.sectionInner}>
-        <div style={s.grid}>
-          {/* Image */}
-          <div style={{ position: "relative" }}>
-            <div
-              className="glass-card"
-              style={{
-                aspectRatio: "1/1",
-                borderRadius: "1rem",
-                overflow: "hidden",
-                padding: "0.5rem",
-              }}
-            >
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqgIdAQ60gMmdLUOpVlOwi_d2hy13l6rJwrbrHNYKbblaAuVEeAccUrqYD7Xz4vNbNbBRqkubw7AQGfeY0TfciUN4LmcZHr88vLa0BkTbgnQQ018C0Tmq8uPKsfgYGkgLigOmBbIWTVnXQrcDzkMk2JpiBnAHbs9hSIaO52zEDamzbn7IHmp-H1JECZa7ivAp7vCz6ay9AXzP8fk6L75SVf2Mt2N854nkWMSmem7Guu-6SEeO6fMKk6r94o89cQKnxb4E"
-                alt="Khoi CM — Senior Frontend Engineer"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  borderRadius: "0.75rem",
-                }}
-              />
-            </div>
-            {/* Experience Badge */}
-            <div
-              className="glass-card"
-              style={{
-                position: "absolute",
-                bottom: "-1.5rem",
-                right: "-1.5rem",
-                padding: "1.5rem",
-                borderRadius: "0.75rem",
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "'Geist', sans-serif",
-                  fontSize: "2.5rem",
-                  fontWeight: 700,
-                  color: "#4edea3",
-                  lineHeight: 1,
-                }}
-              >
-                8+
-              </div>
-              <div
-                style={{
-                  fontFamily: "'Geist', sans-serif",
-                  fontSize: "0.75rem",
-                  fontWeight: 500,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: "#bec8d2",
-                  marginTop: "0.25rem",
-                }}
-              >
-                Years Experience
-              </div>
+    <section
+      id="about"
+      className="scroll-margin"
+      style={{
+        padding: "8rem 1.5rem",
+        maxWidth: "1200px",
+        margin: "0 auto",
+      }}
+    >
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "4fr 8fr",
+          gap: "3rem",
+          alignItems: "flex-start",
+        }}
+        className="about-grid"
+      >
+        {/* Left: Sticky sidebar */}
+        <div className="sticky-sidebar">
+          <h2
+            style={{
+              fontFamily: "'Geist', sans-serif",
+              fontSize: "2rem",
+              fontWeight: 600,
+              letterSpacing: "-0.01em",
+              color: "#f5f5f5",
+              marginBottom: "1rem",
+            }}
+          >
+            About Me
+          </h2>
+          <div
+            style={{
+              height: "4px",
+              width: "5rem",
+              backgroundColor: "#c2a4ff",
+              marginBottom: "2rem",
+            }}
+          />
+          <p
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "1rem",
+              lineHeight: 1.6,
+              color: "#a3a3a3",
+              marginBottom: "1.5rem",
+            }}
+          >
+            I am a Senior Frontend Engineer with 8+ years of experience
+            building scalable web applications and analytics platforms.
+          </p>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "1rem",
+              padding: "1rem",
+              borderRadius: "0.5rem",
+              backgroundColor: "#171717",
+              border: "1px solid #404040",
+            }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#4edea3" style={{ flexShrink: 0 }}>
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#4edea3" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <div>
+              <p style={{ fontSize: "0.875rem", fontWeight: 700, color: "#f5f5f5", margin: 0 }}>
+                8+ Years Experience
+              </p>
+              <p style={{ fontSize: "0.75rem", color: "#a3a3a3", margin: 0 }}>
+                Global Enterprise Projects
+              </p>
             </div>
           </div>
+        </div>
 
-          {/* Content */}
-          <div>
-            <h2
+        {/* Right: Content */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+          {/* Quote card */}
+          <div
+            className="glass-card"
+            style={{
+              padding: "2rem",
+              borderRadius: "0.75rem",
+              borderLeft: "4px solid #c2a4ff",
+            }}
+          >
+            <p
               style={{
-                fontFamily: "'Geist', sans-serif",
-                fontSize: "2rem",
-                fontWeight: 600,
-                lineHeight: 1.2,
-                letterSpacing: "-0.01em",
-                color: "#dae2fd",
-                marginBottom: "1.5rem",
-              }}
-            >
-              Mastering the Art of{" "}
-              <span style={{ color: "#89ceff" }}>Interface Engineering</span>
-            </h2>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1.5rem",
                 fontFamily: "'Inter', sans-serif",
-                fontSize: "1rem",
-                fontWeight: 400,
+                fontSize: "1.125rem",
                 lineHeight: 1.6,
-                color: "#bec8d2",
+                color: "#f5f5f5",
               }}
             >
-              <p>
-                With over eight years in the industry, I have evolved from a
-                passionate developer into a Senior Frontend Architect. My
-                journey has been defined by a relentless pursuit of performance
-                and the seamless integration of AI-assisted development cycles
-                into production-grade environments.
-              </p>
-              <p>
-                Currently focused on modernizing complex enterprise ecosystems,
-                I specialize in building scalable design systems and AI-powered
-                interfaces that don't just solve problems but elevate the user
-                experience to new architectural heights.
-              </p>
-              <div
+              Recently, I&apos;ve focused on AI-assisted software development and
+              LLM-powered applications. By leveraging tools like Claude Code,
+              OpenAI APIs, and GitHub Copilot, I accelerate delivery and build
+              intelligent product experiences that solve real-world problems.
+            </p>
+          </div>
+
+          {/* Two columns */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "2rem",
+            }}
+            className="about-cols"
+          >
+            {/* Core Expertise */}
+            <div>
+              <h3
                 style={{
-                  paddingTop: "1.5rem",
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "1.5rem",
-                  borderTop: "1px solid rgba(62, 72, 80, 0.6)",
+                  fontFamily: "'Geist', sans-serif",
+                  fontSize: "1.5rem",
+                  fontWeight: 600,
+                  color: "#c2a4ff",
+                  marginBottom: "1rem",
                 }}
               >
-                <div>
-                  <span
+                Core Expertise
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                {expertise.map((item) => (
+                  <li
+                    key={item}
                     style={{
-                      display: "block",
-                      color: "#89ceff",
-                      fontWeight: 700,
-                      fontFamily: "'Geist', sans-serif",
-                      marginBottom: "0.25rem",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                      color: "#a3a3a3",
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "0.9375rem",
                     }}
                   >
-                    Focus
-                  </span>
-                  <span
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" strokeWidth="2" strokeLinecap="round">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Leadership */}
+            <div>
+              <h3
+                style={{
+                  fontFamily: "'Geist', sans-serif",
+                  fontSize: "1.5rem",
+                  fontWeight: 600,
+                  color: "#c2a4ff",
+                  marginBottom: "1rem",
+                }}
+              >
+                Leadership
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                {leadership.map((item) => (
+                  <li
+                    key={item}
                     style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: "0.8125rem",
-                      color: "#bec8d2",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem",
+                      color: "#a3a3a3",
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "0.9375rem",
                     }}
                   >
-                    AI Modernization
-                  </span>
-                </div>
-                <div>
-                  <span
-                    style={{
-                      display: "block",
-                      color: "#89ceff",
-                      fontWeight: 700,
-                      fontFamily: "'Geist', sans-serif",
-                      marginBottom: "0.25rem",
-                    }}
-                  >
-                    Location
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: "0.8125rem",
-                      color: "#bec8d2",
-                    }}
-                  >
-                    Global / Remote
-                  </span>
-                </div>
-              </div>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" strokeWidth="2" strokeLinecap="round">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .about-grid { grid-template-columns: 1fr !important; }
+          .about-cols { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   );
 }

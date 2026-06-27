@@ -1,15 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import AboutSection from "./components/AboutSection";
+import ContactSection from "./components/ContactSection";
+import EducationSection from "./components/EducationSection";
+import ExperienceSection from "./components/ExperienceSection";
+import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import NavBar from "./components/NavBar";
-import AboutSection from "./components/AboutSection";
-import TechStackSection from "./components/TechStackSection";
-import ExperienceSection from "./components/ExperienceSection";
 import ProjectsSection from "./components/ProjectsSection";
-import EducationSection from "./components/EducationSection";
-import ContactSection from "./components/ContactSection";
-import Footer from "./components/Footer";
+import TechStackSection from "./components/TechStackSection";
+
 
 export default function Home() {
   return (

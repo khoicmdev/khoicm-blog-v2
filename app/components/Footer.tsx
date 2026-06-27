@@ -1,9 +1,9 @@
 "use client";
 
 const socials = [
-  { href: "https://github.com/khoicm", label: "GitHub" },
-  { href: "https://linkedin.com/in/khoicm", label: "LinkedIn" },
-  { href: "https://x.com/khoicm", label: "X / Twitter" },
+  { href: "https://github.com/khoicmdev", label: "GitHub" },
+  { href: "https://linkedin.com/in/khoicmdev", label: "LinkedIn" },
+  { href: "tel:+84368774688", label: "Phone" },
 ];
 
 export default function Footer() {
@@ -34,14 +34,14 @@ export default function Footer() {
               width: "1.75rem",
               height: "1.75rem",
               borderRadius: "0.25rem",
-              background: "linear-gradient(135deg, #89ceff, #4edea3)",
+              background: "linear-gradient(135deg, #c2a4ff, #4edea3)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontFamily: "'Geist', sans-serif",
               fontWeight: 700,
               fontSize: "0.875rem",
-              color: "#00344d",
+              color: "#1b003a",
             }}
           >
             K
@@ -68,7 +68,7 @@ export default function Footer() {
                 margin: 0,
               }}
             >
-              © 2026 Crafted with precision &amp; code.
+              © 2026 Crafted with Next.js &amp; Coffee.
             </p>
           </div>
         </div>
@@ -79,8 +79,8 @@ export default function Footer() {
             <a
               key={s.href}
               href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={s.href.startsWith("tel:") ? undefined : "_blank"}
+              rel={s.href.startsWith("tel:") ? undefined : "noopener noreferrer"}
               style={{
                 fontFamily: "'Geist', sans-serif",
                 fontSize: "0.875rem",

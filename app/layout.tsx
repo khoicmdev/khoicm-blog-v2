@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "AI Integration",
     "khoicmdev",
   ],
-  authors: [{ name: "Khoi CM", url: "https://khoicm.dev" }],
+  authors: [{ name: "Khoi CM", url: "https://khoidev.vercel.app/" }],
   openGraph: {
     title: "khoicmdev | Senior Frontend Engineer Portfolio",
     description:

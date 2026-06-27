@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -28,8 +27,8 @@ export default function NavBar() {
         zIndex: 50,
         backdropFilter: "blur(12px)",
         backgroundColor: scrolled
-          ? "rgba(11, 19, 38, 0.92)"
-          : "rgba(11, 19, 38, 0.75)",
+          ? "rgba(10, 10, 10, 0.95)"
+          : "rgba(10, 10, 10, 0.75)",
         borderBottom: "1px solid rgba(62, 72, 80, 0.6)",
         transition: "background-color 0.3s ease",
       }}
@@ -52,14 +51,14 @@ export default function NavBar() {
               width: "2rem",
               height: "2rem",
               borderRadius: "0.375rem",
-              background: "linear-gradient(135deg, #89ceff, #4edea3)",
+              background: "linear-gradient(135deg, #c2a4ff, #4edea3)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontFamily: "'Geist', sans-serif",
               fontWeight: 700,
               fontSize: "1rem",
-              color: "#00344d",
+              color: "#1b003a",
             }}
           >
             K
@@ -101,7 +100,7 @@ export default function NavBar() {
                 transition: "color 0.2s ease",
               }}
               onMouseEnter={(e) =>
-                ((e.target as HTMLElement).style.color = "#89ceff")
+                ((e.target as HTMLElement).style.color = "#c2a4ff")
               }
               onMouseLeave={(e) =>
                 ((e.target as HTMLElement).style.color = "#bec8d2")
@@ -118,7 +117,7 @@ export default function NavBar() {
           style={{
             background: "none",
             border: "none",
-            color: "#89ceff",
+            color: "#c2a4ff",
             cursor: "pointer",
             padding: "0.5rem",
             display: "none",
@@ -128,12 +127,12 @@ export default function NavBar() {
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
             {menuOpen ? (
-              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round"/>
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
             ) : (
               <>
-                <rect y="4" width="24" height="2" rx="1"/>
-                <rect y="11" width="24" height="2" rx="1"/>
-                <rect y="18" width="24" height="2" rx="1"/>
+                <rect y="4" width="24" height="2" rx="1" />
+                <rect y="11" width="24" height="2" rx="1" />
+                <rect y="18" width="24" height="2" rx="1" />
               </>
             )}
           </svg>
@@ -144,7 +143,7 @@ export default function NavBar() {
       {menuOpen && (
         <div
           style={{
-            backgroundColor: "rgba(11, 19, 38, 0.98)",
+            backgroundColor: "rgba(10, 10, 10, 0.98)",
             borderTop: "1px solid rgba(62, 72, 80, 0.5)",
             padding: "1rem 1.5rem",
           }}

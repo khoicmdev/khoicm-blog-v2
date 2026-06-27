@@ -32,7 +32,7 @@ export default function ContactSection() {
               right: 0,
               padding: "2rem",
               opacity: 0.07,
-              color: "#89ceff",
+              color: "#c2a4ff",
             }}
           >
             <svg
@@ -59,8 +59,8 @@ export default function ContactSection() {
               zIndex: 1,
             }}
           >
-            Let's build something{" "}
-            <span style={{ color: "#89ceff" }}>extraordinary</span> together.
+            Let&apos;s build something{" "}
+            <span style={{ color: "#c2a4ff" }}>extraordinary</span> together.
           </h2>
           <p
             style={{
@@ -75,7 +75,7 @@ export default function ContactSection() {
             }}
           >
             Seeking a Senior Engineer to lead your next architectural challenge?
-            I'm currently open to selective consulting and leadership
+            I&apos;m currently open to selective consulting and leadership
             opportunities.
           </p>
 
@@ -91,14 +91,14 @@ export default function ContactSection() {
             }}
           >
             <a
-              href="mailto:hello@khoicm.dev"
+              href="mailto:khoicm.hcm@gmail.com"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "0.75rem",
                 padding: "1.25rem 2.5rem",
-                backgroundColor: "#89ceff",
-                color: "#00344d",
+                backgroundColor: "#c2a4ff",
+                color: "#1b003a",
                 fontFamily: "'Geist', sans-serif",
                 fontSize: "1.25rem",
                 fontWeight: 600,
@@ -108,7 +108,7 @@ export default function ContactSection() {
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = "scale(1.03)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(137, 206, 255, 0.3)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(194, 164, 255, 0.3)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = "scale(1)";
@@ -116,14 +116,17 @@ export default function ContactSection() {
               }}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
               </svg>
-              hello@khoicm.dev
+              khoicm.hcm@gmail.com
             </a>
 
             <a
-              href="#"
+              href="/CAO_MINH_KHOI_Rv4.pdf"
+              download="CAO_MINH_KHOI_Rv4.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -149,8 +152,8 @@ export default function ContactSection() {
               }}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
               </svg>
               Download Resume
             </a>

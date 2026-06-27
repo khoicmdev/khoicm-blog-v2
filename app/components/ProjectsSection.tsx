@@ -2,263 +2,208 @@
 
 const projects = [
   {
-    title: "AnyManager",
-    description:
-      "Flagship publisher platform processing billions of requests daily with sub-millisecond precision.",
-    tags: ["React", "Go", "PostgreSQL"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBry3IxK3gBr-SNCEihaQpypCmRkD7i8WgovaZeT7mtXgczEyusuU3QQQ8BHE5DfRINgCmdX2ZkUETbpyyFyx3Ld_apiaZyon_hm-sLYYC1uiUMWjbvv5Xvw6UhDXRLe-NhxqJluzMQrnZ3rMbsFF62mLmPqVM1Vt2VvAqb1M-b_vSZ0Ss4SFk1lCA9-dCutXLvwccLBoVbSd6hcxSZ_ATj1eaYwY_R9C9zztRIeIWLcBCjFk52VRb_6w",
-    link: "#",
+    title: "AnyManager BI Engine",
+    desc: "High-performance analytics dashboard processing massive enterprise datasets in sub-seconds.",
+    badge: "Data Viz",
+    badgeColor: "#c2a4ff",
+    badgeText: "#1b003a",
+    hoverColor: "#c2a4ff",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD2FUVU6oGJIYkz2xuzXyvMcicIw0VDvN3hOJD0bNkB2Isun8d360RqSlexaqU7IdvLCfS3rpYeDNpyu2tHBwDbwHoEtfaZeQrAHWmWQ5lhmxXNPd5otB2xqsZ8j0W967XByWDbJytOyhy5d35MKPqDRSx-2ySYPBt3IUxd440RGpiHFQKqFdhIp0tpZiQmdsPHX9zJTXpnXTmX4aJzFKQn5VenBDfrtsmqIBpe5bkjgam20983EKJpPA",
   },
   {
-    title: "AI Multi-Modal Interface",
-    description:
-      "A seamless interface for interacting with diverse LLMs, featuring real-time context streaming.",
-    tags: ["Next.js", "OpenAI SDK", "Vercel"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCseOCEntlk9Xiio0eCHlW9l4MvXr2TMkBlxSoe3gaaH56ZVldy1rWaoanXsjbmBMf6rJ4GHyP_8X_FBNGIZyqMndmoTACDEv8EiKzoXqj76FoUY6UdMi1hXFkojWAwbfdASI0_AVWR4I2fyl7z3k5wKYvmPyCegjYVBXHa8hvPNdRq7iOzaHJGLZzp-h3kyEykhuKkeSlwxKgzjCyFlcCE_TANNKNuxD9hhOarwrkIPGmJB_uueFOPjw",
-    link: "#",
+    title: "Multi-Modal AI Interface",
+    desc: "Real-time data streaming UI for LLM-powered insights and autonomous data exploration.",
+    badge: "AI Assistant",
+    badgeColor: "#4edea3",
+    badgeText: "#003824",
+    hoverColor: "#4edea3",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA29VxMHMLemWXxmoeoX_jpnnTDtDw-peVQXB86qXKOeg000Xq1GEiKJxZai8oLvl31iQ0zOi1eo5JQaOdYjPGO3eVEjlbarf_conDELndlU-GpP7zrcBPnfBtSm64t5_BpHGMsiBOEpVnGkOra86JVbZukCEcLGA6Ui5_M1h3HsNnSTQCYn_4NHCiqdO-8bIziuY-IdgQx6snzJC7USAZNt-DEhExV2J7NG-jik1GoMOUrmIr95h8ElA",
   },
   {
-    title: "Voterum",
-    description:
-      "Decentralized voting mechanism for DAOs using zero-knowledge proofs for absolute privacy.",
-    tags: ["Solidity", "Ether.js", "Svelte"],
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDEnYZTlJtCICqbpn0votEYbcf4Lgv3bjQwNnUMqDG7HTQfGh_z1vEuPrXc94R6HCMY2G2IpMkUbPyZfoC1BRQlZnOuVn2lvPIBuzENOz3lIEV_5NyEZ0_7rC2nBooEtF9ik75YhZih7Sba06fki2heSm03Xw6o7mi3Co7ToWv6DqeqqlzWk5_skCJTT9BxVpOJyDEEiy0ur7CmfOnHpGYvghb1TvOJ1wgcT6ModbUb-NlmSWMHD_cBNg",
-    link: "#",
+    title: "Votereum System",
+    desc: "An Ethereum-based e-voting system architecture focusing on security and transparency.",
+    badge: "Blockchain",
+    badgeColor: "#c0c1ff",
+    badgeText: "#1000a9",
+    hoverColor: "#c0c1ff",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBznVyOfoDG9r50yIJiRYc7J1rCO3OV2pi21xuPvpTibMkSNj9eO3RD9TzfToH7GJHHxy_uUbKcRUajoVDFv6yknxFuAo3kO-dNj2yzPUPwhn6kn0Og5Pro33vBgnXcwhEMrD4T-HCayogvJ3V6Ykw_sEmMXg1uIHFTLnKuvusWQaGblzrdCXcXgesY_AFR5-Pt2oCgDJ8bCmKoXRxN9J53q-rvnBQpnzVPDrAnvijGQdyJEEsqq3RyiA",
   },
 ];
 
-export default function ProjectsSection() {
+function ProjectCard({ title, desc, badge, badgeColor, badgeText, hoverColor, image }: (typeof projects)[0]) {
   return (
-    <section
-      id="projects"
-      className="scroll-margin"
-      style={{
-        padding: "8rem 0",
-        backgroundColor: "#0A0A0A",
-      }}
-    >
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 1.5rem" }}>
-        {/* Header */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-            marginBottom: "4rem",
-            flexWrap: "wrap",
-            gap: "1.5rem",
-          }}
-        >
-          <div>
-            <h2
-              style={{
-                fontFamily: "'Geist', sans-serif",
-                fontSize: "2rem",
-                fontWeight: 600,
-                letterSpacing: "-0.01em",
-                color: "#dae2fd",
-                marginBottom: "1rem",
-              }}
-            >
-              Select Engineering Works
-            </h2>
-            <p
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "1rem",
-                color: "#bec8d2",
-                maxWidth: "36rem",
-              }}
-            >
-              A curated collection of projects focusing on AI integration,
-              blockchain, and enterprise-grade tools.
-            </p>
-          </div>
-          <a
-            href="#"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              fontFamily: "'Geist', sans-serif",
-              fontSize: "0.875rem",
-              fontWeight: 500,
-              letterSpacing: "0.05em",
-              color: "#89ceff",
-              textDecoration: "none",
-              transition: "gap 0.2s ease",
-            }}
-            onMouseEnter={(e) => {
-              const arrow = e.currentTarget.querySelector("svg");
-              if (arrow) (arrow as HTMLElement).style.transform = "translateX(4px)";
-            }}
-            onMouseLeave={(e) => {
-              const arrow = e.currentTarget.querySelector("svg");
-              if (arrow) (arrow as HTMLElement).style.transform = "translateX(0)";
-            }}
-          >
-            Explore Full Archive
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              style={{ transition: "transform 0.2s ease" }}
-            >
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-        </div>
-
-        {/* Project Grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-            gap: "2rem",
-          }}
-        >
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ProjectCard({
-  title,
-  description,
-  tags,
-  image,
-  link,
-}: {
-  title: string;
-  description: string;
-  tags: string[];
-  image: string;
-  link: string;
-}) {
-  return (
-    <div
-      className="glass-card"
-      style={{ borderRadius: "1rem", overflow: "hidden" }}
-    >
+    <div className="project-card" style={{ cursor: "default" }}>
       {/* Image */}
       <div
         style={{
-          height: "14rem",
-          overflow: "hidden",
           position: "relative",
+          height: "16rem",
+          width: "100%",
+          borderRadius: "0.75rem",
+          overflow: "hidden",
+          marginBottom: "1.5rem",
+          background: "rgba(23, 23, 23, 0.9)",
+          border: "1px solid rgba(255,255,255,0.05)",
         }}
       >
-        <img
-          src={image}
-          alt={title}
+        <div
           style={{
+            backgroundImage: `url('${image}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             width: "100%",
             height: "100%",
-            objectFit: "cover",
             transition: "transform 0.5s ease",
           }}
-          onMouseEnter={(e) =>
-            ((e.target as HTMLElement).style.transform = "scale(1.05)")
-          }
-          onMouseLeave={(e) =>
-            ((e.target as HTMLElement).style.transform = "scale(1)")
-          }
+          className="project-img"
         />
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background:
-              "linear-gradient(to top, #0b1326 0%, transparent 60%)",
-            opacity: 0.7,
+            background: "linear-gradient(to top, rgba(10,10,10,0.8) 0%, transparent 60%)",
           }}
         />
+        <div style={{ position: "absolute", bottom: "1rem", left: "1rem" }}>
+          <span
+            style={{
+              padding: "0.25rem 0.5rem",
+              backgroundColor: badgeColor,
+              color: badgeText,
+              fontSize: "0.625rem",
+              fontWeight: 700,
+              fontFamily: "'Geist', sans-serif",
+              borderRadius: "0.25rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
+            }}
+          >
+            {badge}
+          </span>
+        </div>
       </div>
 
-      {/* Content */}
-      <div style={{ padding: "2rem" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            marginBottom: "1rem",
-          }}
-        >
-          <h3
+      <h3
+        className="project-title"
+        style={{
+          fontFamily: "'Geist', sans-serif",
+          fontSize: "1.5rem",
+          fontWeight: 600,
+          color: "#f5f5f5",
+          marginBottom: "0.5rem",
+          transition: "color 0.2s ease",
+        }}
+        data-hover-color={hoverColor}
+      >
+        {title}
+      </h3>
+      <p
+        style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: "0.9375rem",
+          lineHeight: 1.6,
+          color: "#a3a3a3",
+          display: "-webkit-box",
+          WebkitLineClamp: 2,
+          WebkitBoxOrient: "vertical",
+          overflow: "hidden",
+        }}
+      >
+        {desc}
+      </p>
+
+      <style>{`
+        .project-card:hover .project-img { transform: scale(1.05); }
+        .project-card:hover .project-title { color: var(--hover-col); }
+      `}</style>
+    </div>
+  );
+}
+
+export default function ProjectsSection() {
+  return (
+    <section
+      id="showcase"
+      className="scroll-margin"
+      style={{
+        padding: "8rem 1.5rem",
+        maxWidth: "1200px",
+        margin: "0 auto",
+      }}
+    >
+      {/* Header */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-end",
+          marginBottom: "3rem",
+          flexWrap: "wrap",
+          gap: "1rem",
+        }}
+      >
+        <div>
+          <h2
             style={{
               fontFamily: "'Geist', sans-serif",
-              fontSize: "1.5rem",
+              fontSize: "2rem",
               fontWeight: 600,
-              color: "#dae2fd",
+              letterSpacing: "-0.01em",
+              color: "#f5f5f5",
             }}
           >
-            {title}
-          </h3>
-          <a
-            href={link}
-            style={{
-              color: "#89ceff",
-              textDecoration: "none",
-              transition: "color 0.2s ease",
-            }}
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "#4edea3")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "#89ceff")
-            }
-            aria-label={`Open ${title}`}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
+            Project Showcase
+          </h2>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "1rem", color: "#a3a3a3", marginTop: "0.5rem" }}>
+            A glimpse into high-performance architectures and AI integrations.
+          </p>
         </div>
-        <p
+        <a
+          href="#"
           style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: "1rem",
-            lineHeight: 1.6,
-            color: "#bec8d2",
-            marginBottom: "1.5rem",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.5rem",
+            fontFamily: "'Geist', sans-serif",
+            fontSize: "0.875rem",
+            fontWeight: 500,
+            letterSpacing: "0.05em",
+            color: "#c2a4ff",
+            textDecoration: "none",
+            transition: "transform 0.2s ease",
           }}
+          onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.transform = "translateX(4px)")}
+          onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.transform = "translateX(0)")}
         >
-          {description}
-        </p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              style={{
-                fontSize: "0.625rem",
-                padding: "0.25rem 0.5rem",
-                border: "1px solid rgba(62, 72, 80, 0.8)",
-                borderRadius: "0.125rem",
-                textTransform: "uppercase",
-                fontWeight: 700,
-                fontFamily: "'Geist', sans-serif",
-                letterSpacing: "0.05em",
-                color: "#bec8d2",
-              }}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+          Explore all projects
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
       </div>
-    </div>
+
+      {/* Grid */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "2rem",
+        }}
+        className="proj-grid"
+      >
+        {projects.map((p) => (
+          <ProjectCard key={p.title} {...p} />
+        ))}
+      </div>
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .proj-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 640px) {
+          .proj-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </section>
   );
 }
